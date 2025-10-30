@@ -245,12 +245,4 @@ Coding-Contest-Platform/
 This project demonstrates a full-stack approach combining **Spring Boot**, **React**, and **Docker**.
 The use of Docker simplifies backend deployment, while the separation of frontend and backend layers ensures scalability, maintainability, and cleaner development flow.
 
----
 
-```
-
----
-
-✅ You can now **copy-paste this entire Markdown block directly** into your `README.md` file.  
-GitHub will render it perfectly — with headings, lists, numbered sections, tables, and code formatting exactly as intended.
-```
