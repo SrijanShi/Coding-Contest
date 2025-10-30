@@ -26,12 +26,8 @@ Before you begin, make sure you have the following installed:
 git clone [https://github.com/your-username/Coding-Contest-Platform.git](https://github.com/your-username/Coding-Contest-Platform.git)
 cd Coding-Contest-Platform
 
-Absolutely ✅ here’s your **entire provided text**, fully converted into **proper Markdown format**, ready for **direct copy-paste into your `README.md`**.
-All numbered sections, code blocks, tables, and headings are perfectly formatted for GitHub.
+```
 
----
-
-````markdown
 ### 3. Backend Setup (Spring Boot + Docker)
 
 The backend is containerized using Docker for consistent setup across environments.
