@@ -1,3 +1,5 @@
+
+````markdown
 # 🧩 Coding Contest Platform
 
 A full-stack platform designed to host and manage online coding contests with an intuitive user interface and efficient backend processing.  
@@ -27,11 +29,12 @@ Before you begin, make sure you have the following installed:
 ```bash
 git clone https://github.com/your-username/Coding-Contest-Platform.git
 cd Coding-Contest-Platform
+````
 
-Here is the content formatted as clean Markdown. You can copy the text inside the block below and paste it directly into your `README.md` file.
+---
 
-````markdown
 ### 3. Backend Setup (Spring Boot + Docker)
+
 The backend is containerized using Docker for consistent setup across environments.
 
 Run the following commands to start the backend:
@@ -39,22 +42,28 @@ Run the following commands to start the backend:
 ```bash
 cd backend
 docker-compose up --build
-````
+```
 
 This will:
 
-  * Build a Docker image of the Spring Boot application.
-  * Start a container exposing the backend API on port 8080.
+* Build a Docker image of the Spring Boot application.
+* Start a container exposing the backend API on port **8080**.
 
 Once started, the backend should be accessible at:
-`http://localhost:8080`
+
+```
+http://localhost:8080
+```
 
 You can test if the backend is running by hitting:
-`http://localhost:8080/api/health`
 
------
+```
+http://localhost:8080/api/health
+```
 
-### 4\. Frontend Setup (React.js)
+---
+
+### 4. Frontend Setup (React.js)
 
 The frontend is not containerized to keep development faster and simpler.
 
@@ -67,13 +76,16 @@ npm start
 ```
 
 This will start the frontend development server on:
-`http://localhost:3000`
 
-> **Note:** Ensure your backend container (from Docker) is running before launching the frontend to avoid API connection errors.
+```
+http://localhost:3000
+```
 
------
+Ensure your backend container (from Docker) is running before launching the frontend to avoid API connection errors.
 
-### 5\. Optional: Run Backend Without Docker
+---
+
+### 5. Optional: Run Backend Without Docker
 
 If you prefer running the backend manually:
 
@@ -82,66 +94,70 @@ cd backend
 ./mvnw spring-boot:run
 ```
 
-This will start the server on port 8080 as well.
+This will start the server on port **8080** as well.
 
------
+---
 
-### 🧠 API Design
+## 🧠 API Design
 
-The backend follows a RESTful API architecture. Below are a few main endpoints for demonstration purposes:
+The backend follows a **RESTful API** architecture. Below are a few main endpoints for demonstration purposes (you can extend this list as needed):
 
-| Endpoint | Method | Description | Request Example | Response Example |
-| :--- | :--- | :--- | :--- | :--- |
-| `/api/auth/register` | `POST` | Register a new user | `{ "name": "John", "email": "john@email.com", "password": "12345" }` | `{ "id": 1, "email": "john@email.com" }` |
-| `/api/auth/login` | `POST` | Authenticate user and return a JWT token | `{ "email": "john@email.com", "password": "12345" }` | `{ "token": "jwt-token-value" }` |
-| `/api/contests` | `GET` | Retrieve list of active contests | — | `[ { "id": 1, "title": "Weekly Challenge" } ]` |
-| `/api/submissions` | `POST` | Submit code for a problem | `{ "problemId": 1, "code": "print('Hello')" }` | `{ "status": "Accepted" }` |
+| Endpoint             | Method | Description                              | Request Example                                                      | Response Example                               |
+| -------------------- | ------ | ---------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------- |
+| `/api/auth/register` | `POST` | Register a new user                      | `{ "name": "John", "email": "john@email.com", "password": "12345" }` | `{ "id": 1, "email": "john@email.com" }`       |
+| `/api/auth/login`    | `POST` | Authenticate user and return a JWT token | `{ "email": "john@email.com", "password": "12345" }`                 | `{ "token": "jwt-token-value" }`               |
+| `/api/contests`      | `GET`  | Retrieve list of active contests         | —                                                                    | `[ { "id": 1, "title": "Weekly Challenge" } ]` |
+| `/api/submissions`   | `POST` | Submit code for a problem                | `{ "problemId": 1, "code": "print('Hello')" }`                       | `{ "status": "Accepted" }`                     |
 
-🔐 **Note:** Some endpoints are protected and require a valid JWT token in the `Authorization` header.
+> 🔐 **Note:** Some endpoints are protected and require a valid JWT token in the `Authorization` header.
 
------
+---
 
-### 🧩 Design Choices & Justifications
+## 🧩 Design Choices & Justifications
 
-#### 🧱 Backend Architecture (Spring Boot)
+### 🧱 Backend Architecture (Spring Boot)
 
-Organized using a **Controller-Service-Repository** pattern:
+* Organized using a **Controller-Service-Repository** pattern:
 
   * **Controller:** Handles HTTP requests and responses.
   * **Service:** Contains the core business logic.
-  * **Repository:** Manages database operations using Spring Data JPA.
-  * **Entity-DTO Pattern:** Used to ensure a clean separation between persistence models and data transfer objects.
-  * **Security:** Implemented using JWT-based authentication for stateless session management.
-  * **Validation:** Uses Spring’s built-in validation annotations for cleaner and more reliable request handling.
+  * **Repository:** Manages database operations using **Spring Data JPA**.
+* **Entity-DTO Pattern:** Used to ensure a clean separation between persistence models and data transfer objects.
+* **Security:** Implemented using **JWT-based authentication** for stateless session management.
+* **Validation:** Uses Spring’s built-in validation annotations for cleaner and more reliable request handling.
 
-#### 🖥️ Frontend Architecture (React.js)
+---
 
-  * Built with **React.js**, using React Router for navigation between pages.
-  * State management handled using **Context API** (or Redux if integrated later).
-  * **Axios** (or Fetch API) used for HTTP requests to communicate with the backend.
-  * Clean component-based structure ensuring scalability and reusability.
+### 🖥️ Frontend Architecture (React.js)
 
-#### 🐳 Docker & Deployment
+* Built with **React.js**, using **React Router** for navigation between pages.
+* State management handled using **Context API** (or Redux if integrated later).
+* **Axios** (or Fetch API) used for HTTP requests to communicate with the backend.
+* Clean component-based structure ensuring scalability and reusability.
 
-The backend is fully containerized with Docker for:
+---
+
+### 🐳 Docker & Deployment
+
+* The backend is fully containerized with **Docker** for:
 
   * Consistent runtime environment.
   * Easy setup using a single `docker-compose.yml` file.
-
-The `Dockerfile` handles:
+* The Dockerfile handles:
 
   * Building the Spring Boot `.jar` file.
   * Running the application on port 8080.
-
-The `docker-compose.yml` handles:
+* The `docker-compose.yml` handles:
 
   * Building the Docker image.
-  * Mapping ports (8080:8080).
+  * Mapping ports (`8080:8080`).
   * Managing environment variables if needed (like database config).
 
-⚡ The frontend is **not containerized intentionally** to allow rapid local development and hot reloading.
+> ⚡ The frontend is **not containerized** intentionally to allow rapid local development and hot reloading.
 
-#### ⚙️ Example `docker-compose.yml`
+---
+
+### ⚙️ Example `docker-compose.yml`
 
 ```yaml
 version: '3.8'
@@ -156,19 +172,19 @@ services:
     restart: always
 ```
 
------
+---
 
 ### ⚖️ Trade-offs and Challenges
 
-| Challenge | Description | Solution / Trade-off |
-| :--- | :--- | :--- |
-| **Docker networking** | Ensuring Spring Boot container is accessible on host | Exposed port `8080` in `docker-compose.yml` |
-| **Token expiration** | Managing JWT token lifecycle in frontend | Added frontend interceptors to handle expiry and redirect |
+| Challenge                | Description                                             | Solution / Trade-off                                           |
+| ------------------------ | ------------------------------------------------------- | -------------------------------------------------------------- |
+| **Docker networking**    | Ensuring Spring Boot container is accessible on host    | Exposed port `8080` in `docker-compose.yml`                    |
+| **Token expiration**     | Managing JWT token lifecycle in frontend                | Added frontend interceptors to handle expiry and redirect      |
 | **Frontend build speed** | Docker build for frontend was slower during development | Decided to run frontend outside Docker for faster dev workflow |
 
------
+---
 
-### 🧪 Testing
+## 🧪 Testing
 
 You can run backend unit tests using:
 
@@ -182,9 +198,9 @@ Or if the container is running:
 docker exec -it coding-contest-backend ./mvnw test
 ```
 
------
+---
 
-### 📁 Project Structure
+## 📁 Project Structure
 
 ```
 Coding-Contest-Platform/
@@ -205,31 +221,36 @@ Coding-Contest-Platform/
 └── README.md
 ```
 
------
+---
 
-### 💡 Future Improvements
+## 💡 Future Improvements
 
-  * Add an admin panel to manage contests and problems.
-  * Integrate code execution API (like Judge0) for real-time submission evaluation.
-  * Implement leaderboards and contest analytics.
-  * Add Docker support for frontend for complete containerization in production.
+* Add an **admin panel** to manage contests and problems.
+* Integrate **code execution API** (like Judge0) for real-time submission evaluation.
+* Implement **leaderboards** and **contest analytics**.
+* Add **Docker support for frontend** for complete containerization in production.
 
------
+---
 
-### 🧔 Author
+## 🧔 Author
 
 **Srijan Shitashma**
+Email: [22ucc103@lnmiit.ac.in](mailto:22ucc103@lnmiit.ac.in)
+📍 LNMIIT Jaipur
 
-  * **Email:** 22ucc103@lnmiit.ac.in
-  * 📍 LNMIIT Jaipur
+---
 
------
+## 🏁 Conclusion
 
-### 🏁 Conclusion
-
-This project demonstrates a full-stack approach combining Spring Boot, React, and Docker.
-
+This project demonstrates a full-stack approach combining **Spring Boot**, **React**, and **Docker**.
 The use of Docker simplifies backend deployment, while the separation of frontend and backend layers ensures scalability, maintainability, and cleaner development flow.
 
+---
+
 ```
+
+---
+
+✅ This version will display **exactly as intended** on GitHub —  
+numbered sections look clean, code blocks are formatted with syntax highlighting, and spacing won’t collapse anywhere.
 ```
