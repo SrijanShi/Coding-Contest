@@ -1,8 +1,6 @@
-
-````markdown
 # 🧩 Coding Contest Platform
 
-A full-stack platform designed to host and manage online coding contests with an intuitive user interface and efficient backend processing.  
+A full-stack platform designed to host and manage online coding contests with an intuitive user interface and efficient backend processing.
 This project consists of two main parts:
 - **Backend:** Developed using **Spring Boot**, containerized via **Docker**.
 - **Frontend:** Built using **React.js** for a smooth and dynamic user experience.
@@ -11,9 +9,7 @@ The platform allows users to register, log in, participate in contests, and subm
 
 ---
 
-## 🚀 Setup Instructions
-
-### 1. Prerequisites
+## 🚀 1. Prerequisites
 
 Before you begin, make sure you have the following installed:
 
@@ -24,15 +20,18 @@ Before you begin, make sure you have the following installed:
 
 ---
 
-### 2. Clone the Repository
+### 🚀 2. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Coding-Contest-Platform.git
+git clone [https://github.com/your-username/Coding-Contest-Platform.git](https://github.com/your-username/Coding-Contest-Platform.git)
 cd Coding-Contest-Platform
-````
+
+Absolutely ✅ here’s your **entire provided text**, fully converted into **proper Markdown format**, ready for **direct copy-paste into your `README.md`**.
+All numbered sections, code blocks, tables, and headings are perfectly formatted for GitHub.
 
 ---
 
+````markdown
 ### 3. Backend Setup (Spring Boot + Docker)
 
 The backend is containerized using Docker for consistent setup across environments.
@@ -42,7 +41,7 @@ Run the following commands to start the backend:
 ```bash
 cd backend
 docker-compose up --build
-```
+````
 
 This will:
 
@@ -117,11 +116,14 @@ The backend follows a **RESTful API** architecture. Below are a few main endpoin
 
 ### 🧱 Backend Architecture (Spring Boot)
 
-* Organized using a **Controller-Service-Repository** pattern:
+Organized using a **Controller-Service-Repository** pattern:
 
-  * **Controller:** Handles HTTP requests and responses.
-  * **Service:** Contains the core business logic.
-  * **Repository:** Manages database operations using **Spring Data JPA**.
+* **Controller:** Handles HTTP requests and responses.
+* **Service:** Contains the core business logic.
+* **Repository:** Manages database operations using Spring Data JPA.
+
+Other design considerations:
+
 * **Entity-DTO Pattern:** Used to ensure a clean separation between persistence models and data transfer objects.
 * **Security:** Implemented using **JWT-based authentication** for stateless session management.
 * **Validation:** Uses Spring’s built-in validation annotations for cleaner and more reliable request handling.
@@ -139,19 +141,21 @@ The backend follows a **RESTful API** architecture. Below are a few main endpoin
 
 ### 🐳 Docker & Deployment
 
-* The backend is fully containerized with **Docker** for:
+The backend is fully containerized with **Docker** for:
 
-  * Consistent runtime environment.
-  * Easy setup using a single `docker-compose.yml` file.
-* The Dockerfile handles:
+* Consistent runtime environment.
+* Easy setup using a single `docker-compose.yml` file.
 
-  * Building the Spring Boot `.jar` file.
-  * Running the application on port 8080.
-* The `docker-compose.yml` handles:
+The **Dockerfile** handles:
 
-  * Building the Docker image.
-  * Mapping ports (`8080:8080`).
-  * Managing environment variables if needed (like database config).
+* Building the Spring Boot `.jar` file.
+* Running the application on port **8080**.
+
+The **docker-compose.yml** handles:
+
+* Building the Docker image.
+* Mapping ports (`8080:8080`).
+* Managing environment variables if needed (like database config).
 
 > ⚡ The frontend is **not containerized** intentionally to allow rapid local development and hot reloading.
 
@@ -235,7 +239,7 @@ Coding-Contest-Platform/
 ## 🧔 Author
 
 **Srijan Shitashma**
-Email: [22ucc103@lnmiit.ac.in](mailto:22ucc103@lnmiit.ac.in)
+📧 Email: [22ucc103@lnmiit.ac.in](mailto:22ucc103@lnmiit.ac.in)
 📍 LNMIIT Jaipur
 
 ---
@@ -251,6 +255,6 @@ The use of Docker simplifies backend deployment, while the separation of fronten
 
 ---
 
-✅ This version will display **exactly as intended** on GitHub —  
-numbered sections look clean, code blocks are formatted with syntax highlighting, and spacing won’t collapse anywhere.
+✅ You can now **copy-paste this entire Markdown block directly** into your `README.md` file.  
+GitHub will render it perfectly — with headings, lists, numbered sections, tables, and code formatting exactly as intended.
 ```
